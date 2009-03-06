@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <title>Angus Graeme Forbes : Portfolio 2009</title>
+    <meta http-equiv="Content-Language" content="en-us">
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+    <link rel="stylesheet" type="text/css" href="portfolio.css" />
+
+    <script>
+      var openpage = "projects";
+      function getQueryVariable(variable)
+      {
+        var query = window.location.search.substring(1);
+        //alert(window.location);
+        //alert(query);
+        var vars = query.split("&");
+        for (var i=0;i<vars.length;i++)
+        {
+          var pair = vars[i].split("=");
+          if (pair[0] == variable)
+          {
+            //alert(pair[1]);
+            openpage = pair[1];
+            return pair[1];
+          }
+        }
+        ////do nothing...
+        //alert('Query Variable ' + variable + ' not found');
+      }
+    </script>
+
+  </head>
+  <body id="thebody"> <!--onload="getQueryVariable('page');">-->
+  <a id="nameheader" class="nameheader" onclick="homepage();">Angus Forbes</a>
+    <!--<div id="nameheader" class="nameheader" onclick="homepage();">Angus Graeme Forbes</div>-->
+    <a id="topicheader" class="topicheader">News</a>
+     <div id="col1" class="col1" ></div>
+
+    <div id="contentDiv" class="contentDiv" >
+    </div>
+    <script src="portfolio_data.js" language="javascript" type="text/javascript"> </script>
+    <script language="javascript" type="text/javascript">
+      var bod = document.getElementById("thebody");
+      var col1 = document.getElementById("col1");
+
+      //var heightinc = 20;
+
+
+      for (var i = 0; i < mainMenu.length; i++)
+      {
+        var menuHeader = mainMenu[i];
+        //alert(menuHeader + " == " + openpage + "?");
+        var header = document.createElement("a");
+
+        header.className=menuHeader[3];
+        header.id = "header_"+i;
+        col1.appendChild(header);
+
+        //either attach an HREF...
+        if (menuHeader[3] == "linkMenu")
+        {
+          header.href = menuHeader[2];
+          //header.text-decoration = "underline";
+        }
+        else
+        {
+          header.href="javascript:switchPageContents2('" + menuHeader[1]+"','"+ menuHeader[2]+"',"+i+");";
+        }
+        //or attach an event/attribute
+
+        if (browser.isIE)
+        {
+          header.attachEvent("onmouseover", makeEventFunc(i) );
+          //header.attachEvent("onclick", makeEventFunc(i) );
+        }
+        else
+        {
+          header.setAttribute("onmouseover","handleMouseOver('" + menuHeader[1]+"','"+ menuHeader[2]+"',"+i+");");
+          header.setAttribute("onmouseout","handleMouseOut('" + menuHeader[1]+"','"+ menuHeader[2]+"',"+i+");");
+          //header.setAttribute("onclick","switchPageContents2('" + menuHeader[1]+"','"+ menuHeader[2]+"',"+i+");");
+        }
+
+
+        header.innerHTML = menuHeader[0] + "<br>";
+      }
+
+      //check to see if we should open to a particular page
+      getQueryVariable('page');
+      for (var i = 0; i < mainMenu.length; i++)
+      {
+        var menuHeader = mainMenu[i];
+
+        if (menuHeader[0] == openpage)
+        {
+         switchPageContents2(menuHeader[1],menuHeader[2],i);
+        }
+     }
+
+    </script>
+
+
+  </body>
+</html>
