@@ -169,7 +169,7 @@ a:visited:hover{
 .nameheader
 {
     position:absolute;
-    font-size:20px; /*1.1em;*/
+    font-size:15px; /*18px;*/
     font-weight:normal;
     font-weight:bold;
     font-style:italic;
@@ -180,9 +180,18 @@ a:visited:hover{
     top:53px;
     top:55px;
     top:25px;
+    top:5px;
+    top:45px;
+    top:25px;
     left:0px;
+    left:40px;
+    left:32px;
     width:171px;
+    width:191px;
+    width:211px;
     text-align:right;
+    text-align:center;
+    text-align:left;
 }
 
 .topicheader1
@@ -447,9 +456,9 @@ img.photo
 {
     background:white;
     color:black;
-    font-size:18px; /*.7em;*/
+    font-size:14px; /*18px;*/
     font-weight:bolder;
-    font-family:Arial,Monaco,Georgia, Arial;
+    font-family:Monaco,Georgia, Arial;
     position:absolute;
     text-align:right;
     left:0px;
@@ -458,7 +467,9 @@ img.photo
     top:40px;
     top:90px;
     top:60px;
+    top:90px;
     width:170px;
+    width:190px;
     height:200px;
     border-bottom:red solid 0px;
   }
@@ -500,6 +511,8 @@ img.photo
     top:9px;
     top:46px;
     /*height:100%;*/
+    top:22px;
+    top:8px;
     width:65%;
     /*top:125px;*/
     /*left:190px;*/

@@ -102,7 +102,7 @@ var spacer = new Array("", "", "", "");
 
 var about = new Array("about", "About", "about/about.html", "subHeaderMenu");
 var blog = new Array("posts", "Posts", "blog/blog.html", "normalMenu");
-var cv = new Array("curriculum vitae", "C.V.", "about/cv_030109.html", "normalMenu");
+var cv = new Array("curriculum vitae", "C.V.", "about/cv.html", "normalMenu");
 var git = new Array("github", "", "http://github.com/angusforbes/", "linkMenu");
 
 var academic = new Array("academic", "", "", "subHeaderMenu");
@@ -407,6 +407,8 @@ function switchToPageNamed(nameOfPage)
 }
 
 var currentSelectionIdx = -1;
+var selectedSize = "12px"; //18
+var unselectedSize = "10px"; //13
 function switchPageContents2(title, page, num )
 {
 
@@ -415,7 +417,7 @@ function switchPageContents2(title, page, num )
   //curheader.style.background = "#4790be"; //gray
   curheader.style.color = "#4790be";
   // curheader.style.fontWeight = "bold"; //#4790be"; //gray
-  curheader.style.fontSize = "18px"; //#4790be"; //gray
+  curheader.style.fontSize = selectedSize; //#4790be"; //gray
   //curheader.style.border = "red solid 1px"; //#4790be"; //gray
 
   for (var i = 0; i < mainMenu.length; i++)
@@ -425,7 +427,7 @@ function switchPageContents2(title, page, num )
       //document.getElementById("header_"+i).style.background = 'white';
       document.getElementById("header_"+i).style.color = 'black';
       // document.getElementById("header_"+i).style.fontWeight = 'normal';
-       document.getElementById("header_"+i).style.fontSize = '13px';
+       document.getElementById("header_"+i).style.fontSize = unselectedSize;
       // document.getElementById("header_"+i).style.border = 'white solid 0px';
 
     }
