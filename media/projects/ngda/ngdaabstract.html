@@ -1,0 +1,176 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+<title>Visually Browsing Georeferenced Digital Libraries</title>
+
+<style type="text/css"><!--
+body { text-align: center }
+#container { width: 564px; margin: 2em auto; text-align: left }
+#title { text-align: center }
+#authors { text-align: center }
+#addresses { font-size: smaller }
+.figure { text-align: center }
+--></style>
+
+<script type="text/javascript"><!--
+function insertMailto (name, domain) {
+  var addr = name + '@' + domain;
+  document.write('<a href="mailto:' + addr + '">' + addr + '<\/a>');
+}
+//--></script>
+
+</head>
+
+<body><div id="container">
+
+<h2 id="title">Visually Browsing Georeferenced Digital Libraries</h2>
+
+<p id="authors">Angus Forbes<sup>1</sup> and Greg
+Jan&eacute;e<sup>2</sup></p>
+
+<p id="addresses"><sup>1</sup>Map and Imagery Laboratory, Davidson
+Library, University of California at Santa Barbara, Santa Barbara, CA
+93106-9010.  <script type="text/javascript"><!--
+insertMailto('angus.forbes', 'library.ucsb.edu');
+//--></script><br>
+<sup>2</sup>Institute for Computational Earth System Science,
+University of California at Santa Barbara, Santa Barbara, CA
+93106-3060.  <script type="text/javascript"><!--
+insertMailto('gjanee', 'alexandria.ucsb.edu');
+//--></script></p>
+
+<hr>
+
+<p>We present a prototype visual browser for georeferenced digital
+libraries that allows a library to be navigated, and library content
+to be discovered, without explicitly formulating queries.  The browser
+also provides a seamless transition from a synoptic view of library
+content to examination of individual library items.</p>
+
+<p>A georeferenced digital library organizes information of all
+stripes, from raw data to textual documents, into collections of
+discrete items, each of which has a geographic region of relevance or
+<em>footprint</em>.  Among the geosciences there are copious amounts
+of data that are georeferenced, and it has been estimated that over
+70% of all textual documents contain relevant georeferences [<a
+href="#ref-1">1</a>].  The principal goal of a georefenced digital
+library is to take advantage of this metadata, and to take advantage
+of the near-universal reference frames provided by cartographic
+coordinate systems and geographic placenames, in order to provide
+spatial search and navigation services and to reveal spatial context
+and relationships.</p>
+
+<p>The dominant paradigm in information retrieval systems is the
+query-result cycle: the user first formulates a query; submits the
+query and waits for results to appear (usually in the form of a linear
+list); examines the results (often limited to examining one at a
+time); and perhaps refines the query, thus repeating the cycle.  The
+retrieval mechanisms offered by georeferenced digital libraries
+(including the <a href="http://www.alexandria.ucsb.edu/">Alexandria
+Digital Library</a> (ADL), <a
+href="http://www.geodata.gov/">Geospatial One-Stop</a>, and the <a
+href="http://www.geographynetwork.com/">Geography Network</a>) as well
+as geographically-enhanced Web search systems (including <a
+href="http://local.google.com/">Google Local</a>, <a
+href="http://local.yahoo.com/">Yahoo! Local</a>, and <a
+href="http://www.msn.com">MSN</a>) all follow this model.  These
+systems typically provide contextual base maps to support the query
+formulation phase, but support for visualizing query results is
+limited, if present at all.  Also largely missing is the ability to
+see spatial relationships among query results and library content as a
+whole.  ADL provides some synoptic graphics [<a href="#ref-2">2</a>],
+but these are static and not integrated with the search system.</p>
+
+<p>To address these limitations, we have developed a visual browser
+for georeferenced digital libraries that eliminates the query/result
+cycle.  Instead, the browser displays reduced-resolution versions
+(i.e., thumbnails and iconic representations) of all items in the
+digital library over a base map.  Map pan and zoom controls provide
+the means of navigating the library.  A screen capture of the browser
+is shown in the figure below.</p>
+
+<p class="figure"><a href="ngda-browser-big.jpg"><img
+src="ngda-browser-small.jpg" alt="screen capture"></a><br>
+Figure 1.  Screen capture.  Click on the image to view full size.</p>
+
+<p>Of course, displaying <i>all</i> items immediately begs the
+question of <i>how</i> to display the items in a visually coherent
+fashion, especially when large numbers of items overlap and even
+coincide in geographic space.  After analyzing and categorizing the
+types of overlaps encountered in digital library collections [<a
+href="#ref-3">3</a>], we developed a suite of de-cluttering
+mechanisms:</p>
+
+<ul>
+
+<li>A custom clustering system that groups items having sizes that are
+too large or too small or that are too dense to be compatible with the
+current zoom level.  Clusters of items are represented by
+variable-sized icons to represent the number of library items within a
+region. The clusters are defined both by the geospatial range of a
+collection and the viewing dimensions of the browser.</li>
+
+<li>Two interface controls that dynamically control the opacity and
+size of item footprints.</li>
+
+<li>A novel control widget that combines selection of zoom level with
+a histogram depicting the numbers of items visible at each zoom level.
+This device allows the user to determine at which zoom levels items
+are visible, which is of particular value for items that are too small
+and/or dense for the current view, as well as for items that are too
+large for the current view (and hence effectively invisible due to the
+lack of visible footprint boundaries).</li>
+
+</ul>
+
+<p>Our prototype browser is implemented using the <a
+href="http://www.google.com/apis/maps/">Google Maps API</a>, and is
+built on top of the <a
+href="http://www.alexandria.ucsb.edu/middleware/">ADL middleware
+server</a> [<a href="#ref-4">4</a>].  To support the rapid response
+times needed for visual browsing, an automated preprocessing step,
+built on top of core ADL library services, computes and caches certain
+display-related information such as clusters and zoom level
+histograms.  A demo version of the browser operating over selected
+UCSB collections is available at <a
+href="http://clients.alexandria.ucsb.edu/ngda/">http://clients.alexandria.ucsb.edu/ngda/</a>.</p>
+
+<p>Future development includes integration with other (non-geographic)
+query criteria; refinement of the aforementioned clutter reducing
+mechanisms; reimplementation using the <a
+href="http://code.google.com/webtoolkit/">Google Web Toolkit</a>; and
+integration on top of the <a href="http://www.ngda.org/">National
+Geospatial Digital Archive</a> (NGDA), the funding project for this
+work.</p>
+
+<h3>References</h3>
+
+<p>[<a name="ref-1">1</a>] Linda L. Hill.
+<a href="http://mitpress.mit.edu/catalog/item/default.asp?ttype=2&amp;tid=11007">Georeferencing:
+The Geographic Associations of Information</a>.  (Cambridge,
+Massachusetts: MIT Press, 2006).</p>
+
+<p>[<a name="ref-2">2</a>] Linda L. Hill, Greg Jan&eacute;e, Ron
+Dolin, James Frew, and Mary Larsgaard.  <a
+href="http://dx.doi.org/doi:10.1002/(SICI)1097-4571(1999)50:13&lt;1169::AID-ASI3&gt;3.0.CO;2-3">Collection
+Metadata Solutions for Digital Library Applications</a>.  <i>Journal
+of the American Society for Information Science (JASIS)</i>
+<b>50</b>(13) (November 1999): 1169-1181.</p>
+
+<p>[<a name="ref-3">3</a>] Greg Jan&eacute;e.
+<a href="http://www.alexandria.ucsb.edu/~gjanee/archive/2006/footprint-visualization/">Spatial
+Footprint Visualization</a>.  January 24, 2006.</p>
+
+<p>[<a name="ref-4">4</a>] Greg Jan&eacute;e and James Frew.  <a
+href="http://dx.doi.org/10.1145/544220.544306">The ADEPT Digital
+Library Architecture</a>.  <i>Proceedings of the Second ACM/IEEE-CS
+Joint Conference on Digital Libraries (JCDL)</i> (Portland, Oregon;
+July 14-18, 2002): 342-350.</p>
+
+</div></body>
+
+</html>
