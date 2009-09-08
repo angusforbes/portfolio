@@ -1,55 +1,74 @@
-<link rel="stylesheet" type="text/css" href="../portfolio.css" />
-<div class="page">
+<html>
+  <head>
+    <title>Angus Graeme Forbes : Portfolio 2009</title>
+    <meta http-equiv="Content-Language" content="en-us">
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <link rel="stylesheet" type="text/css" href="../../portfolio.css" />
+  </head>
 
-<!--<a class="bandname"></a>-->
+  <body id="thebody">
+    <a id="nameheader" class="nameheader" href="http://www.mat.ucsb.edu/~a.forbes">Angus Forbes</a>
+    <a id="topicheader" class="topicheader">News</a>
+    <div id="col1" class="col1" ></div>
 
+    <script src="../../portfolio_data.js" language="javascript" type="text/javascript"> </script>
+    <script language="javascript" type="text/javascript">
+      //THIS NEEDS TO BE THE NAME AS REFERRED TO IN THE .js FILE! -->
+      makeMenu("coil maps");
+    </script>
+
+
+    <div id="contentDiv" class="contentDiv" >
+      <div class="page">
+
+        <!-- ADD PAGE SPECIFIC STUFF HERE -->
 A Coil Map is an animated geographic representation
 which dynamically transforms the location and size of nodes of information
 in response to specified input events.
 The transformation maintains each node
-in loose proximity to a recognizable geographic position. 
+in loose proximity to a recognizable geographic position.
 The Coil Map is initially placed on top of a geographic image,
 dividing the image uniformly into a number of cells by recursively slicing it
 into two nodes, and then each of those nodes into two nodes, etc, up until
 a specified depth.
-The Coil Map listens for events that occur within the geographic regions 
+The Coil Map listens for events that occur within the geographic regions
 as defined by those cells. After each input event occurs, the map is transformed.
-The event causes a chain of shifts in various nodes as it "uncoils"-- 
-propagates the new information upwards-- recursively upward to from the leaf node 
-(where the event occurred) to the root node. 
-The effect of this series of transformations is that the more dramatic changes 
-occurring near the area where the event occurred are mitigated 
+The event causes a chain of shifts in various nodes as it "uncoils"--
+propagates the new information upwards-- recursively upward to from the leaf node
+(where the event occurred) to the root node.
+The effect of this series of transformations is that the more dramatic changes
+occurring near the area where the event occurred are mitigated
 as it propagates to more distant neighbors.
 <p>
 <table>
 
   <tr>
     <td>
-<img class="photo" src="../media/projects/coilmaps/coilmap-ceb1.jpg">
+<img class="photo" src="../../../media/projects/coilmaps/coilmap-ceb1.jpg">
    </td>
     <td>
-<img class="photo" src="../media/projects/coilmaps/coilmap-ceb2.jpg">
+<img class="photo" src="../../../media/projects/coilmaps/coilmap-ceb2.jpg">
    </td>
     <td>
-<img class="photo" src="../media/projects/coilmaps/coilmap-ceb3.jpg">
+<img class="photo" src="../../../media/projects/coilmaps/coilmap-ceb3.jpg">
    </td>
     <td>
-<img class="photo" src="../media/projects/coilmaps/coilmap-ceb4.jpg">
+<img class="photo" src="../../../media/projects/coilmaps/coilmap-ceb4.jpg">
    </td>
   </tr>
 
 <tr>
     <td>
-<img class="photo" src="../media/projects/coilmaps/coilmap-ceb7.jpg">
+<img class="photo" src="../../../media/projects/coilmaps/coilmap-ceb7.jpg">
    </td>
     <td>
-<img class="photo" src="../media/projects/coilmaps/coilmap-ceb8.jpg">
+<img class="photo" src="../../../media/projects/coilmaps/coilmap-ceb8.jpg">
    </td>
     <td>
-<img class="photo" src="../media/projects/coilmaps/coilmap-ceb10.jpg">
+<img class="photo" src="../../../media/projects/coilmaps/coilmap-ceb10.jpg">
    </td>
     <td>
-<img class="photo" src="../media/projects/coilmaps/coilmap-ceb1.jpg">
+<img class="photo" src="../../../media/projects/coilmaps/coilmap-ceb1.jpg">
    </td>
   </tr>
 </table>
@@ -68,16 +87,16 @@ geographic regions and how this popularity changed over the course of the day.
 
   <tr>
     <td>
-<img class="photo" src="../media/projects/coilmaps/coilmap-archives1b.jpg">
+<img class="photo" src="../../../media/projects/coilmaps/coilmap-archives1b.jpg">
    </td>
     <td>
-<img class="photo" src="../media/projects/coilmaps/coilmap-archives2b.jpg">
+<img class="photo" src="../../../media/projects/coilmaps/coilmap-archives2b.jpg">
    </td>
     <td>
-<img class="photo" src="../media/projects/coilmaps/coilmap-archives5b.jpg">
+<img class="photo" src="../../../media/projects/coilmaps/coilmap-archives5b.jpg">
    </td>
     <td>
-<img class="photo" src="../media/projects/coilmaps/coilmap-archives4b.jpg">
+<img class="photo" src="../../../media/projects/coilmaps/coilmap-archives4b.jpg">
    </td>
 
   </tr>
@@ -86,7 +105,7 @@ geographic regions and how this popularity changed over the course of the day.
 
 Coil Maps can also be used effectively as a way to interactively highlight
 a particular element within a larger set of data. A interactive application
-that lets a user navigate a set of historical photographs was used to 
+that lets a user navigate a set of historical photographs was used to
 demonstrate Coil Maps at MAST 2009.
 <p>
 [<u><a href="">git repository</a></u>]<br>
@@ -96,4 +115,8 @@ demonstrate Coil Maps at MAST 2009.
 
 
 <p>&nbsp;<p>
-</div>
+      </div>
+    </div>
+
+  </body>
+</html>

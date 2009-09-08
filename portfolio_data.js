@@ -1,4 +1,7 @@
 
+var PUBLIC_DIR = "http://localhost:8080/Portfolio/portfolio/";
+
+
 var bio = "<div style='text-align:justify;position:relative;left:1px;top:0px'> I am a graduate student in Media Arts and Technology (Visual and Spatial Arts emphasis) at UC Santa Barbara. My research interests include information visualization, augmented intelligence, artificial creativity, machine learning, and education. I am particularly interested in developing projects that utilize and visualize theories about the metaphorical nature of language and visual perception. My work experience includes programming, design, and teaching. From 1999 to 2001 I was a director of software development for Micromuse, Inc., a company that develops network management software. In 2002, I founded Synaesthetic Software, a company that develops music education software. Currently I work for the National Geospatial Digital Archive as a programmer and interface designer. As an artist, I am interested in exploring and modelling dynamic, organic multi-dimensional spaces in various mediums. I am also the drummer for Chamisa Mesa, an experimental noise-rock band. In a former life, I was a PhD student in British and American Literature at the University of Utah. <p> This portfolio was created with cross-browser compatible javascript code, using ajax to dynamically load pages. Mouseover the contents at the left to bring up submenus; mouseover the submenus to load content. The \"Current Projects\" pages are still under development. <p> angus.forbes@gmail.com </div> ";
 
 
@@ -113,6 +116,7 @@ var teaching = new Array("teaching", "Teaching", "teaching/teaching.html", "norm
 var musicStuff = new Array("music", "Music", "music/music.html", "subHeaderMenu");
 
 var projectHeader = new Array("projects", "Projects Menu", "projects/projects.html", "subHeaderMenu");
+var reTelling = new Array("retelling", "reTelling", "projects/retelling/retelling.html", "normalMenu");
 var dataFlow = new Array("dataflow", "Data Flow", "projects/dataflow/dataflow.html", "normalMenu");
 var cellTango = new Array("cell tango", "Cell Tango", "projects/celltango/celltango.html", "normalMenu");
 var gcvma = new Array("gcvma", "GCVMA", "projects/gcvma/gcvma.html", "normalMenu");
@@ -137,6 +141,7 @@ var mainMenu = new Array(
   spacer,
   projectHeader,
   behaviorism,
+  reTelling,
   dataFlow,
   cellTango,
   coilmap,
@@ -333,7 +338,7 @@ function switchSubContents(num)
 
 function homepage()
 {
-  /*
+/*
   var contentDiv = document.getElementById("contentDiv");
   contentDiv.innerHTML = bio;
   */
@@ -359,7 +364,7 @@ function handleMouseOut(title, page, num )
   var curheader = document.getElementById("header_"+num);
   curheader.style.color = "black";
 
-  //curheader.style.fontSize = "12px";
+//curheader.style.fontSize = "12px";
 
 }
 
@@ -380,17 +385,17 @@ function handleMouseOver(title, page, num )
     if (i != num && i != currentSelectionIdx)
     {
       var testheader = document.getElementById("header_"+i);
-     // alert(testheader.style.color);
+      // alert(testheader.style.color);
       //if (testheader.style.color != "rgb(71, 144, 190)")
       {
-        //document.getElementById("header_"+i).style.color = 'black';
+    //document.getElementById("header_"+i).style.color = 'black';
 
-      }
-      //document.getElementById("header_"+i).style.background = 'white';
+    }
+    //document.getElementById("header_"+i).style.background = 'white';
 
     }
   }
-  }
+}
 
 /**
  * Method to switch to a particular page by its name.
@@ -427,8 +432,8 @@ function switchPageContents2(title, page, num )
       //document.getElementById("header_"+i).style.background = 'white';
       document.getElementById("header_"+i).style.color = 'black';
       // document.getElementById("header_"+i).style.fontWeight = 'normal';
-       document.getElementById("header_"+i).style.fontSize = unselectedSize;
-      // document.getElementById("header_"+i).style.border = 'white solid 0px';
+      document.getElementById("header_"+i).style.fontSize = unselectedSize;
+    // document.getElementById("header_"+i).style.border = 'white solid 0px';
 
     }
   }
@@ -451,10 +456,10 @@ function switchPageContents2(title, page, num )
   {
 
 
-  var topic = document.getElementById("topicheader");
-  topic.innerHTML = title;
+    var topic = document.getElementById("topicheader");
+    topic.innerHTML = title;
 
-  ajaxpage(page, "contentDiv");
+    ajaxpage(page, "contentDiv");
   }
 //contentDiv.innerHTML = page;
 }
@@ -493,4 +498,106 @@ function changephoto(beg, num, type)
 
 }
 
+function makeMenu(pageName)
+{
+  var bod = document.getElementById("thebody");
+  var col1 = document.getElementById("col1");
 
+  var num = -1;
+
+  for (var i = 0; i < mainMenu.length; i++)
+  {
+    var menuHeader = mainMenu[i];
+    var header = document.createElement("a");
+
+    header.className=menuHeader[3];
+    header.id = "header_"+i;
+    col1.appendChild(header);
+
+    //either attach an HREF...
+    if (menuHeader[3] == "linkMenu")
+    {
+      header.href = menuHeader[2];
+    }
+    else
+    {
+     
+      if (menuHeader[2] != "")
+      {
+
+
+
+        //header.href="../../"+menuHeader[2];
+        header.href=PUBLIC_DIR+menuHeader[2];
+      //header.href="javascript:switchPageContents2('" + menuHeader[1]+"','"+ menuHeader[2]+"',"+i+");";
+      }
+    }
+    //or attach an event/attribute
+    if (menuHeader[2] != "")
+    {
+
+      if (browser.isIE)
+      {
+        header.attachEvent("onmouseover", makeEventFunc(i) );
+      //header.attachEvent("onclick", makeEventFunc(i) );
+      }
+      else
+      {
+        header.setAttribute("onmouseover","handleMouseOver('" + menuHeader[1]+"','"+ menuHeader[2]+"',"+i+");");
+        header.setAttribute("onmouseout","handleMouseOut('" + menuHeader[1]+"','"+ menuHeader[2]+"',"+i+");");
+      //header.setAttribute("onclick","switchPageContents2('" + menuHeader[1]+"','"+ menuHeader[2]+"',"+i+");");
+      }
+
+      if (menuHeader[0] == pageName)
+      {
+        num = i;
+      }
+    }
+    header.innerHTML = menuHeader[0] + "<br>";
+  }
+
+  //check to see if we should open to a particular page
+  //      getQueryVariable('page');
+  //      for (var i = 0; i < mainMenu.length; i++)
+  //      {
+  //        var menuHeader = mainMenu[i];
+  //
+  //        if (menuHeader[0] == openpage)
+  //        {
+  //          switchPageContents2(menuHeader[1],menuHeader[2],i);
+  //        }
+  //      }
+
+  if (num >= 0)
+  {
+    setFontOfCurrentMenuSelection(num);
+  }
+}
+
+function setFontOfCurrentMenuSelection(num)
+{
+
+  currentSelectionIdx = num;
+  var curheader = document.getElementById("header_"+num);
+  //curheader.style.background = "#4790be"; //gray
+  curheader.style.color = "#4790be";
+  // curheader.style.fontWeight = "bold"; //#4790be"; //gray
+  curheader.style.fontSize = selectedSize; //#4790be"; //gray
+  //curheader.style.border = "red solid 1px"; //#4790be"; //gray
+
+  for (var i = 0; i < mainMenu.length; i++)
+  {
+    if (i != num)
+    {
+      //document.getElementById("header_"+i).style.background = 'white';
+      document.getElementById("header_"+i).style.color = 'black';
+      // document.getElementById("header_"+i).style.fontWeight = 'normal';
+      document.getElementById("header_"+i).style.fontSize = unselectedSize;
+    // document.getElementById("header_"+i).style.border = 'white solid 0px';
+
+    }
+  }
+
+ 
+ 
+}

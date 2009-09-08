@@ -423,7 +423,7 @@ img.photo
 .postname
 {
   vertical-align:top;
-   /* font-size:12px; */
+    font-size:11px;
     font-weight:normal;
     font-family:Verdana;
     font-style:normal;
@@ -440,7 +440,7 @@ img.photo
 .post
 {
   vertical-align:top;
-   /* font-size:12px; */
+    font-size:11px;
     font-weight:normal;
     font-family:Verdana;
     font-style:normal;
@@ -498,7 +498,7 @@ img.photo
     color:black;
     font-size:.7em;
     font-weight:normal;
-    font-family:verdana,Georgia,Monaco;
+    font-family:Courier,verdana,Georgia,Monaco;
     */
     text-align:left;
     position:absolute;
@@ -526,9 +526,8 @@ img.photo
     background:white;
     color:black;
     font-size:11px;
-    font-size:11px;
     font-weight:normal;
-    font-family:Verdana;
+    font-family:Verdana,Courier;
     text-align:justify;
     text-align:left;
 }
