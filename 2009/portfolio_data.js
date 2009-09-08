@@ -1,5 +1,7 @@
+//*** MAKE SURE AND SWITCH THIS WHEN YOU PUT IT ON A LIVE SITE!!!
 
-var PUBLIC_DIR = "http://localhost:8080/Portfolio/portfolio/2009/";
+//var PUBLIC_DIR = "http://localhost:8080/Portfolio/portfolio/2009/";
+var PUBLIC_DIR = "http://www.mat.ucsb.edu/~a.forbes/portfolio/2009/";
 
 
 var bio = "<div style='text-align:justify;position:relative;left:1px;top:0px'> I am a graduate student in Media Arts and Technology (Visual and Spatial Arts emphasis) at UC Santa Barbara. My research interests include information visualization, augmented intelligence, artificial creativity, machine learning, and education. I am particularly interested in developing projects that utilize and visualize theories about the metaphorical nature of language and visual perception. My work experience includes programming, design, and teaching. From 1999 to 2001 I was a director of software development for Micromuse, Inc., a company that develops network management software. In 2002, I founded Synaesthetic Software, a company that develops music education software. Currently I work for the National Geospatial Digital Archive as a programmer and interface designer. As an artist, I am interested in exploring and modelling dynamic, organic multi-dimensional spaces in various mediums. I am also the drummer for Chamisa Mesa, an experimental noise-rock band. In a former life, I was a PhD student in British and American Literature at the University of Utah. <p> This portfolio was created with cross-browser compatible javascript code, using ajax to dynamically load pages. Mouseover the contents at the left to bring up submenus; mouseover the submenus to load content. The \"Current Projects\" pages are still under development. <p> angus.forbes@gmail.com </div> ";
