@@ -26,6 +26,5 @@
 <jar href="lib/new_vecmath.jar"/>
 </resources>
     <application-desc main-class="binpackphoto.WorldBinPackPhotoApplet2">
-      <argument>circleToGrass</argument>
     </application-desc>
 </jnlp>
