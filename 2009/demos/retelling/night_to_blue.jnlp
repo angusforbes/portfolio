@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<jnlp codebase="file:/Users/angus/" href="launch3.jnlp" spec="1.0+">
+<jnlp codebase="http://www.mat.ucsb.edu/~a.forbes/portfolio/2009/demos/retelling/" href="night_to_blue.jnlp" spec="1.0+">
     <information>
         <title>BinPackPhotoShanghai</title>
         <vendor>angus</vendor>
@@ -26,5 +26,6 @@
 <jar href="lib/new_vecmath.jar"/>
 </resources>
     <application-desc main-class="binpackphoto.WorldBinPackPhotoApplet2">
+      <argument>nightToBlueVision</argument>
     </application-desc>
 </jnlp>
