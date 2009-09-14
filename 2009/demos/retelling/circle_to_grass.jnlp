@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jnlp codebase="file:/Users/angus/" href="launch3.jnlp" spec="1.0+">
+    <information>
+        <title>BinPackPhotoShanghai</title>
+        <vendor>angus</vendor>
+        <homepage href=""/>
+        <description>BinPackPhotoShanghai</description>
+        <description kind="short">BinPackPhotoShanghai</description>
+    <offline-allowed/>
+</information>
+<security>
+<all-permissions/>
+</security>
+    <resources>
+<j2se java-vm-args="-Djava.library.path=lib -Djava.security.policy=applet.policy -Xmx128m -Xms64m" version="1.5+"/>
+<jar eager="true" href="lib/BinPackPhotoShanghai.jar" main="true"/>
+        <extension href="http://download.java.net/media/jogl/jsr-231-2.x-webstart/jogl-all-awt.jnlp" name="jogl-all-awt"/>
+    
+
+
+
+<jar href="lib/behaviorism.jar"/>
+<jar href="lib/simple-log-rollover.jar"/>
+<jar href="lib/simple-log.jar"/>
+<jar href="lib/google-collect-snapshot-20080530.jar"/>
+<jar href="lib/new_vecmath.jar"/>
+</resources>
+    <application-desc main-class="binpackphoto.WorldBinPackPhotoApplet2">
+    </application-desc>
+</jnlp>
